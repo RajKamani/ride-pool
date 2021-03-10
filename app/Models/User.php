@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_driver'
     ];
 
     /**
@@ -40,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function is_driver()
+    {
+        if($this->is_driver == 1)
+            return true;
+        else
+            return  false;
+    }
+
 }

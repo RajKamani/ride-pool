@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route May Change After UI integration. DON't touch here.
+Route::post('/offerride/{user}', [App\Http\Controllers\HomeController::class, 'CheckIfDriver'])->name('offer_ride');
+Route::post('/Agreement/accept/{user}', [App\Http\Controllers\HomeController::class, 'UpdateAsDriver'])->name('AgreementAccept');
+// After This Line You may Add.

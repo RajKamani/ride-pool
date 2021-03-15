@@ -20,7 +20,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'is_driver'
+        'is_driver',
+        'contact',
+        'gender',
+        'address'
     ];
 
     /**

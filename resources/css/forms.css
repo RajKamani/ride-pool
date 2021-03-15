@@ -1,0 +1,76 @@
+.form {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__title {
+    font-size: 2.5rem;
+    margin: 8px 0;
+}
+
+.form__input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    font-family: 'Open sans', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    margin: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.form__input::placeholder {
+    color: #5c5c5c;
+    font-size: 0.8rem;
+}
+
+.form__input-radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Open sans', sans-serif;
+}
+
+.form__input-radio-button {
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.form__input-radio label {
+    color: #5c5c5c;
+    font-size: 0.8rem;
+}
+
+.form__input-radio div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__input:focus, .form__input:valid {
+    border: 1px solid black;
+}
+
+.form-link {
+    text-align: center;
+    font-size: 1rem;
+    margin: 8px 0;
+    color: rgb(99, 99, 99);
+}
+
+.form-link a {
+    text-decoration: none;
+    color: black
+}
+
+.form-link a:hover {
+    color: #FCD462;
+}

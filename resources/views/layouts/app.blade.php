@@ -1,83 +1,68 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/forms.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>MyPool</title>
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+        <header class="main-header">
+            <a href="/" class="logo-link">
+                <img src="./assets/images/logo.png"/>
+                <div class="logo-link__title"><span>MyPool</span></div>
+            </a>
+            <nav class="main-header__navigation">
+                <ul class="main-header__navigation-items">
+                    <li class="main-header__navigation-item"><a href="{{--{{route('book_ride')}}--}}"><span>Book Ride</span></a></li>
+                    <li class="main-header__navigation-item"><a href="./offer-ride.html"><span>Offer Ride</span></a></li>
+                    @guest
+                    <li class="main-header__navigation-item"><a href="{{route('register')}}"><span>Sign Up</span></a></li>
+                    <li class="main-header__navigation-item"><a href="{{route('login')}}"><span>Login</span></a></li>
+                    @else
+                        <form method="POST" action="{{route('logout')}}">
+                           @csrf
+                            <li class="main-header__navigation-item" ><button style="border: none;background-color: black"><a href="{{route('logout')}}"><span>Logout</span></a></button></li>
+                        </form>
+                    @endguest;
+                </ul>
+            </nav>
+            <div class="main-header__drawer-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="main-header__sidedrawer">
+                <nav class="main-header__mobile-navigation">
+                    <ul class="main-header__mobile-navigation-items">
+                        <li class="main-header__mobile-navigation-item"><a href="./book-ride.html">Book Ride</a></li>
+                        <li class="main-header__mobile-navigation-item"><a href="./offer-ride.html">Offer Ride</a></li>
                         @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-                            
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+                        <li class="main-header__mobile-navigation-item"><a href="{{route('register')}}">Sign Up</a></li>
+                        <li class="main-header__mobile-navigation-item"><a href="{{route('login')}}">Login</a></li>
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                            <form method="POST" action="{{route('logout')}}">
+                                @csrf
+                                <li class="main-header__mobile-navigation-item" ><button style="border: none;background-color: inherit"><a href="{{route('logout')}}"><span>Logout</span></a></button></li>
+                            </form>
                         @endguest
                     </ul>
-                </div>
+                </nav>
             </div>
-        </nav>
+        </header>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
-    </div>
+
 </body>
+<script src="./js//navigation.js"></script>
 </html>

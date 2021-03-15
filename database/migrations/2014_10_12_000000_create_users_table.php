@@ -18,6 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->integer('contact')->default(0);
+            $table->String('gender');
+            $table->text('address');
             $table->string('password');
             $table->boolean('is_driver')->default(0); // 0 Means Regular User, 1 Means Driver
             $table->rememberToken();

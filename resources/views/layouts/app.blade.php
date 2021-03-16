@@ -27,29 +27,32 @@
                 <li class="main-header__navigation-item"><span
                         style="color: white;font-size: 1.2rem">Welcome, {{ucfirst(auth()->user()->name)}}</span></li>
             @endauth
-            @auth
+                @auth
                     <li class="main-header__navigation-item">
                         <a href="{{route('home')}}"><span>Book Ride</span></a>
                     </li>
                     <form method="post" action="{{route('offer_ride',auth()->user())}}">
-                @csrf
-                <li class="main-header__navigation-item">
-                    <button style="border: none;background-color: black"><a><span>Offer Ride</span></a></button>
-                </li>
-            </form>
+                        @csrf
+                        <li class="main-header__navigation-item">
+                            <button style="border: none;background-color: black"><a><span>Offer Ride</span></a></button>
+                        </li>
+                    </form>
                 @endauth
-            @guest
-                <li class="main-header__navigation-item"><a href="{{route('register')}}"><span>Sign Up</span></a></li>
-                <li class="main-header__navigation-item"><a href="{{route('login')}}"><span>Login</span></a></li>
-            @else
-                <form method="POST" action="{{route('logout')}}">
-                    @csrf
-                    <li class="main-header__navigation-item">
-                        <button style="border: none;background-color: black"><a
-                                href="{{route('logout')}}"><span>Logout</span></a></button>
+
+                @guest
+                    <li class="main-header__navigation-item"><a href="{{route('register')}}"><span>Sign Up</span></a>
                     </li>
-                </form>
-            @endguest;
+                    <li class="main-header__navigation-item"><a href="{{route('login')}}"><span>Login</span></a></li>
+
+                @else
+                    <form method="POST" action="{{route('logout')}}">
+                        @csrf
+                        <li class="main-header__navigation-item">
+                            <button style="border: none;background-color: black"><a
+                                    href="{{route('logout')}}"><span>Logout</span></a></button>
+                        </li>
+                    </form>
+                @endguest
         </ul>
     </nav>
 
@@ -61,8 +64,19 @@
     <div class="main-header__sidedrawer">
         <nav class="main-header__mobile-navigation">
             <ul class="main-header__mobile-navigation-items">
-                <li class="main-header__mobile-navigation-item"><a href="./book-ride.html">Book Ride</a></li>
-                <li class="main-header__mobile-navigation-item"><a href="./offer-ride.html">Offer Ride</a></li>
+                @auth
+                    <li class="main-header__mobile-navigation-item">
+                        <a href="{{route('home')}}"><span>Book Ride</span></a>
+                    </li>
+                    <form method="post" action="{{route('offer_ride',auth()->user())}}">
+                        @csrf
+                        <li class="main-header__mobile-navigation-item">
+                            <button style="border: none;background-color: inherit"><a><span>Offer Ride</span></a></button>
+                        </li>
+                    </form>
+
+                @endauth
+
                 @guest
                     <li class="main-header__mobile-navigation-item"><a href="{{route('register')}}">Sign Up</a></li>
                     <li class="main-header__mobile-navigation-item"><a href="{{route('login')}}">Login</a></li>
@@ -70,7 +84,8 @@
                     <form method="POST" action="{{route('logout')}}">
                         @csrf
                         <li class="main-header__mobile-navigation-item">
-                            <button style="border: none;background-color: inherit"><a href="{{route('logout')}}"><span>Logout</span></a>
+                            <button style="border: none;background-color: inherit"><a href="{{route('logout')}}">
+                                    <span>Logout</span></a>
                             </button>
                         </li>
                     </form>
@@ -85,5 +100,6 @@
 </main>
 
 </body>
-<script src="./js//navigation.js"></script>
+<script src="{{URL::asset('js/navigation.js')}}"></script>
+
 </html>

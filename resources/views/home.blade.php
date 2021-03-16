@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+
                     <form method="post" action="{{route('offer_ride',auth()->user())}}">
                      @csrf
                         <button class="btn btn-primary" type="Submit">Offer ride</button>

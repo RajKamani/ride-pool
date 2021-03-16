@@ -25,14 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('book_ride');
     }
 
     public function CheckIfDriver(User $user) //Checking if Current user is Driver Or not
     {
         if ($user->is_driver())  // is_driver() is Written in User Model.
         {
-            return "Drivers Dashboard";
+            return view('driver_dashboard',compact('user'));
+
         } else {
             return view('demo_change_isDriver');
         }
@@ -46,7 +47,7 @@ class HomeController extends Controller
         $user->save();
         if($updated)
         {
-            return "Drivers Dashboard - because now you are driver. ";
+            return view('driver_dashboard',compact('user'));;
         }
         else{
             return 'Failed To update user as Driver.';

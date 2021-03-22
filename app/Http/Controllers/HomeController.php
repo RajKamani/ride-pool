@@ -18,40 +18,4 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('book_ride');
-    }
-
-    public function CheckIfDriver(User $user) //Checking if Current user is Driver Or not
-    {
-        if ($user->is_driver())  // is_driver() is Written in User Model.
-        {
-            return view('driver_dashboard',compact('user'));
-
-        } else {
-            return view('demo_change_isDriver');
-        }
-    }
-
-    public function UpdateAsDriver(User $user)
-    {
-        // validate Some Request (TASK : Remaining)
-
-        $updated=$user->is_driver = 1;
-        $user->save();
-        if($updated)
-        {
-            return view('driver_dashboard',compact('user'));;
-        }
-        else{
-            return 'Failed To update user as Driver.';
-        }
-    }
-
 }

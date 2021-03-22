@@ -20,9 +20,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/book-ride', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/book-ride', [App\Http\Controllers\BookRideController::class, 'index'])->name('home');
 
-// Route May Change After UI integration. DON't touch here.
-Route::post('/offerride/{user}', [App\Http\Controllers\HomeController::class, 'CheckIfDriver'])->name('offer_ride');
-Route::post('/Agreement/accept/{user}', [App\Http\Controllers\HomeController::class, 'UpdateAsDriver'])->name('AgreementAccept');
+// Route May Change After UI integration. DON't touch
+Route::post('/offerride/{user}', [App\Http\Controllers\CheckDriverController::class, 'CheckIfDriver'])->name('offer_ride');
+Route::post('/Agreement/accept/{user}', [App\Http\Controllers\CheckDriverController::class, 'UpdateAsDriver'])->name('AgreementAccept');
 // After This Line You may Add.

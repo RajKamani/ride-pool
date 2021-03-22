@@ -188,5 +188,5 @@
 
 </body>
 <script src="{{URL::asset('js/navigation.js')}}"></script>
-
+@yield('agreementScript')
 </html>

@@ -26,8 +26,12 @@
                     </span>
             </div>
             <div class="align-center">
-                <button class="flat-button" type="submit">Continue</button>
+                <button class="flat-button disabled-button" id="btn-con" disabled type="submit">Continue</button>
             </div>
         </div>
     </form>
+
+    @section('agreementScript')
+        <script src="{{URL::asset('js/UserAgreement.js')}}"></script>
+    @endsection
 @endsection

@@ -25,4 +25,5 @@ Route::get('/book-ride', [App\Http\Controllers\BookRideController::class, 'index
 // Route May Change After UI integration. DON't touch
 Route::post('/offerride/{user}', [App\Http\Controllers\CheckDriverController::class, 'CheckIfDriver'])->name('offer_ride');
 Route::post('/Agreement/accept/{user}', [App\Http\Controllers\CheckDriverController::class, 'UpdateAsDriver'])->name('AgreementAccept');
+Route::get('/agreement/{user}', [App\Http\Controllers\CheckDriverController::class, 'display_agreement'])->name('redirect_Agreement');
 // After This Line You may Add.

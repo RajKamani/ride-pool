@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form class="common-layout" method="post" action="{{route('AgreementAccept',auth()->user())}}">
+    <form class="common-layout" method="POST" action="{{route('AgreementAccept',auth()->user())}}">
         @csrf
         <div class="common-layout__image-container">
             <img src="{{ URL::asset('assets/svgs/city.svg') }}" alt="Offroad"/>
@@ -20,18 +20,23 @@
                 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                 deserunt mollit anim id est laborum.</p>
             <input class="form-input" type="text" placeholder="Drivers Licence" name="licence"/>
+            @error('licence')
+            <span style="color: red;">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
             <div class="align-start">
                 <input type="checkbox" name="agree" id="agree"><span> I agree the <a class="form-link" href="#">Terms
                             & Conditions</a>
                     </span>
             </div>
             <div class="align-center">
-                <button class="flat-button disabled-button" id="btn-con" disabled type="submit">Continue</button>
+                <button class="flat-button disabled-button" disabled type="submit">Continue</button>
             </div>
         </div>
     </form>
 
-    @section('agreementScript')
-        <script src="{{URL::asset('js/UserAgreement.js')}}"></script>
-    @endsection
+@endsection
+@section('agreementScript')
+    <script src="{{URL::asset('js/UserAgreement.js')}}"></script>
 @endsection

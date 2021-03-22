@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->text('address');
             $table->string('password');
             $table->boolean('is_driver')->default(0); // 0 Means Regular User, 1 Means Driver
+            $table->bigInteger('licence')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

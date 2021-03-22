@@ -34495,6 +34495,58 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/css/bookings.css":
+/*!************************************!*\
+  !*** ./resources/css/bookings.css ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/driver-dashboard.css":
+/*!********************************************!*\
+  !*** ./resources/css/driver-dashboard.css ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/manage-vehicles.css":
+/*!*******************************************!*\
+  !*** ./resources/css/manage-vehicles.css ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/ride-requests.css":
+/*!*****************************************!*\
+  !*** ./resources/css/ride-requests.css ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -49700,7 +49752,11 @@ Vue.compile = compileToFunctions;
 /******/ 			["./resources/sass/app.scss"],
 /******/ 			["./resources/css/index.css"],
 /******/ 			["./resources/css/main.css"],
-/******/ 			["./resources/css/forms.css"]
+/******/ 			["./resources/css/forms.css"],
+/******/ 			["./resources/css/bookings.css"],
+/******/ 			["./resources/css/driver-dashboard.css"],
+/******/ 			["./resources/css/manage-vehicles.css"],
+/******/ 			["./resources/css/ride-requests.css"]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		

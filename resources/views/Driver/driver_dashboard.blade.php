@@ -4,6 +4,7 @@
     <div class="driver-dashboard">
         <a class="driver-activity" href="add-journey.html">
             <img src="../assets/images/journey.png" alt="Journey"/>
+
             <h2>Add Journey</h2>
         </a>
         <a class="driver-activity" href="bookings.html">
@@ -14,7 +15,7 @@
             <img src="../assets/images/ride-requests.png" alt="Ride Requests"/>
             <h2>View Ride Requests</h2>
         </a>
-        <a class="driver-activity" href="./edit-vehicle.html">
+        <a class="driver-activity" href="{{route('add-vehicle-form')}}">
             <img src="../assets/images/add-vehicle.png" alt="Add Vehicles"/>
             <h2>Add Vehicle</h2>
         </a>

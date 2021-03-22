@@ -52,4 +52,9 @@ class User extends Authenticatable
             return  false;
     }
 
+    public function vehicles()
+    {
+        return $this->hasMany(Vehicle::class);
+    }
+
 }

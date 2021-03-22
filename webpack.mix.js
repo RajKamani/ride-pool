@@ -18,4 +18,9 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .css('resources/css/index.css','public/css')
     .css('resources/css/main.css','public/css')
-    .css('resources/css/forms.css','public/css');
+    .css('resources/css/forms.css','public/css')
+
+    .css('resources/css/bookings.css','public/css')
+    .css('resources/css/driver-dashboard.css','public/css')
+    .css('resources/css/manage-vehicles.css','public/css')
+    .css('resources/css/ride-requests.css','public/css');

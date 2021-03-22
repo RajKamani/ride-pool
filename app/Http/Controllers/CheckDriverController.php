@@ -18,7 +18,7 @@ class CheckDriverController extends Controller
     {
         if ($user->is_driver())  // is_driver() is Written in User Model.
         {
-            return view('driver_dashboard',compact('user'));
+            return view('Driver.driver_dashboard',compact('user'));
 
         } else {
             return view('demo_change_isDriver');
@@ -41,7 +41,7 @@ class CheckDriverController extends Controller
         $user->save();
         if($updated)
         {
-            return view('driver.driver_dashboard',compact('user'));;
+            return view('Driver.driver_dashboard',compact('user'));;
         }
         else{
             return 'Failed To update user as Driver.';

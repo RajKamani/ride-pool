@@ -27,3 +27,5 @@ Route::post('/offerride/{user}', [App\Http\Controllers\CheckDriverController::cl
 Route::post('/Agreement/accept/{user}', [App\Http\Controllers\CheckDriverController::class, 'UpdateAsDriver'])->name('AgreementAccept');
 Route::get('/agreement/{user}', [App\Http\Controllers\CheckDriverController::class, 'display_agreement'])->name('redirect_Agreement');
 // After This Line You may Add.
+Route::get('/add-vehicle', [App\Http\Controllers\VehicleController::class, 'display_add_form'])->name('add-vehicle-form');
+Route::post('/add-vehicle/{user}', [App\Http\Controllers\VehicleController::class, 'add_vehicle'])->name('add-vehicle');

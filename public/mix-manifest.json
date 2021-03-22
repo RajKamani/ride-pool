@@ -5,5 +5,9 @@
     "/css/main.css": "/css/main.css",
     "/css/app.css": "/css/app.css",
     "/css/forms.css": "/css/forms.css",
-    "/css/index.css": "/css/index.css"
+    "/css/index.css": "/css/index.css",
+    "/css/ride-requests.css": "/css/ride-requests.css",
+    "/css/manage-vehicles.css": "/css/manage-vehicles.css",
+    "/css/driver-dashboard.css": "/css/driver-dashboard.css",
+    "/css/bookings.css": "/css/bookings.css"
 }

@@ -11,9 +11,9 @@
                     <a href="{{--{{route('edit-vehicle',$vehicle->id)}}--}}}" class="flat-button">
                         Edit
                     </a>
-                    <form method="post">
+                    <form method="post" action="{{route('delete-vehicle',$vehicle)}}">
                         @csrf
-                        @method('patch')
+                        @method('delete')
                         <button class="flat-button">
                             Delete
                         </button>

@@ -34,4 +34,5 @@ Route::post('/add-vehicle/{user}', [App\Http\Controllers\VehicleController::clas
 
 //manage Vehicle
 Route::get('/manage-vehicle/{user}', [App\Http\Controllers\VehicleController::class, 'display_vehicle_list'])->name('manage-vehicle');
+Route::delete('/delete-vehicle/{vehicle}', [App\Http\Controllers\VehicleController::class, 'delete_vehicle'])->name('delete-vehicle');
 

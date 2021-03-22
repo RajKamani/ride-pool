@@ -41,7 +41,10 @@ class VehicleController extends Controller
                 'rate_per_km' =>$data['rate'],
             ]);
         }
-        return back();
+        $vehicles=$user->vehicles()->get();
+
+        return view('Driver.manage-vehicle',compact('vehicles'));
+
     }
 
     function display_vehicle_list(User $user)
@@ -49,5 +52,11 @@ class VehicleController extends Controller
        $vehicles=$user->vehicles()->get();
 
        return view('Driver.manage-vehicle',compact('vehicles'));
+    }
+
+    function delete_vehicle(Vehicle $vehicle)
+    {
+        $vehicle->delete();
+        return back();
     }
 }

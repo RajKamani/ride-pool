@@ -2,26 +2,27 @@
 
 @section('content')
 
-    <div class="centered">
-        <form class="form" method="POST" action="{{ route('login') }}">
-            @csrf
-            <h1 class="form__title">Login</h1>
-            <input class="form__input" type="text" name="email" placeholder="E-Mail" required/>
-            @error('email')
-            <span style="color: red;">
+
+    <form class="form" method="POST" action="{{ route('login') }}">
+        @csrf
+        <h1 class="form-title">Login</h1>
+        <input class="form-input" type="text" name="email" placeholder="E-Mail" required />
+        @error('email')
+        <span style="color: red;">
                     <strong>{{ $message }}</strong>
                 </span>
-            @enderror
-            <input class="form__input" type="password" name="password" placeholder="Password" required/>
-            @error('password')
-            <span style="color: red;">
+        @enderror
+        <input class="form-input" type="password" name="password" placeholder="Password" required />
+        @error('password')
+        <span style="color: red;">
                                         <strong>{{ $message }}</strong>
                                     </span>
-            @enderror
-            <button class="flat-button" type="submit">Login</button>
-            <p class="form-link">Don't have any account?<a href="{{route('register')}}"> Signup</a></p>
-        </form>
-    </div>
+        @enderror
+        <button class="flat-button" type="submit">Login</button>
+        <p class="form-link">Don't have any account?<a href="{{route('register')}}"> Signup</a></p>
+    </form>
+
+
 @endsection
 
 

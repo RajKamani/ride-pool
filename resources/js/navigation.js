@@ -1,10 +1,23 @@
 const drawerToggle = document.querySelector('.main-header__drawer-toggle');
+const backdrop = document.querySelector('.backdrop');
 const sideDrawer = document.querySelector('.main-header__sidedrawer');
 
-drawerToggle.addEventListener('click', () => {
-    sideDrawer.classList.add('open');
-})
+const openSideDrawerHandler = () => {
+    backdrop.style.display = 'block';
+    setTimeout(() => {
+        sideDrawer.classList.add('open');
+        backdrop.classList.add('backdrop-enable');
+    }, 100);
+}
 
-sideDrawer.addEventListener('click', () => {
-    sideDrawer.classList.remove('open');
-})
+const closeSideDrawerHandler = () => {
+    backdrop.classList.remove('backdrop-enable');
+    setTimeout(() => {
+        sideDrawer.classList.remove('open');
+        backdrop.style.display = 'none';
+    }, 100);
+}
+
+drawerToggle.addEventListener('click', openSideDrawerHandler);
+sideDrawer.addEventListener('click', closeSideDrawerHandler);
+backdrop.addEventListener('click', closeSideDrawerHandler);

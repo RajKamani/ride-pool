@@ -8,9 +8,11 @@
                     <span>{{$vehicle->model_name}}</span>
                 </div>
                 <div class="vehicle-actions">
-                    <a href="{{--{{route('edit-vehicle',$vehicle->id)}}--}}}" class="flat-button">
+
+                    <a href="{{route('update-vehicle-form',$vehicle)}}" class="flat-button">
                         Edit
                     </a>
+
                     <form method="post" action="{{route('delete-vehicle',$vehicle)}}">
                         @csrf
                         @method('delete')

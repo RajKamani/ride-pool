@@ -43,4 +43,11 @@ class VehicleController extends Controller
         }
         return back();
     }
+
+    function display_vehicle_list(User $user)
+    {
+       $vehicles=$user->vehicles()->get();
+
+       return view('Driver.manage-vehicle',compact('vehicles'));
+    }
 }

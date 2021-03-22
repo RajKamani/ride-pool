@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="{{ URL::asset('css/bookings.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/driver-dashboard.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/manage-vehicle.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/manage-vehicles.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/ride-requests.css') }}">
 
 

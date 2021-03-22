@@ -19,7 +19,7 @@
             <img src="../assets/images/add-vehicle.png" alt="Add Vehicles"/>
             <h2>Add Vehicle</h2>
         </a>
-        <a class="driver-activity" href="./manage-vehicles.html">
+        <a class="driver-activity" href="{{route('manage-vehicle',auth()->user())}}">
             <img src="../assets/images/manage-vehicles.png" alt="Manage Vehicles"/>
             <h2>Manage Vehicles</h2>
         </a>

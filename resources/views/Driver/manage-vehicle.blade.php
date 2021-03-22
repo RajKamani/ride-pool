@@ -1,1 +1,33 @@
+@extends('layouts.app')
 
+@section('content')
+    <div class="content">
+        @forelse($vehicles as $vehicle)
+            <div class="vehicle">
+                <div class="vehicle-details">
+                    <span>{{$vehicle->model_name}}</span>
+                </div>
+                <div class="vehicle-actions">
+                    <a href="{{--{{route('edit-vehicle',$vehicle->id)}}--}}}" class="flat-button">
+                        Edit
+                    </a>
+                    <form method="post">
+                        @csrf
+                        @method('patch')
+                        <button class="flat-button">
+                            Delete
+                        </button>
+                    </form>
+                </div>
+            </div>
+        @empty
+            <div class="vehicle">
+                <div class="vehicle-details">
+                    <span>No Vehicle Added Yet!</span>
+                </div>
+
+            </div>
+        @endforelse
+
+    </div>
+@endsection

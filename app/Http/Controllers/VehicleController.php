@@ -43,7 +43,8 @@ class VehicleController extends Controller
         }
         $vehicles = $user->vehicles()->get();
 
-        return view('Driver.manage-vehicle', compact('vehicles'));
+        return redirect(route('manage-vehicle',auth()->user(),compact('vehicles')));
+        ##return redirect(view('Driver.manage-vehicle', compact('vehicles')));
 
     }
 

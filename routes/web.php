@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RideController;
+use App\Http\Controllers\RouteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -37,4 +39,17 @@ Route::get('/manage-vehicle/{user}', [App\Http\Controllers\VehicleController::cl
 Route::delete('/delete-vehicle/{vehicle}', [App\Http\Controllers\VehicleController::class, 'delete_vehicle'])->name('delete-vehicle');
 Route::get('/update-vehicle/{vehicle}', [App\Http\Controllers\VehicleController::class, 'update_vehicle_form'])->name('update-vehicle-form');
 Route::patch('/update-vehicle/{vehicle}', [App\Http\Controllers\VehicleController::class, 'update_vehicle'])->name('update-vehicle');
+
+// add route
+Route::middleware('auth')->group(function (){
+    Route::get('/add-route/{user}', [RouteController::class,'display_add_form'])->name('add-route-form');
+});
+
+
+//ride request
+Route::get('/ride-req/{user}', [RideController::class,'display_req'])->name('ride-request');
+Route::get('/book-history/{user}', [RideController::class,'book_history'])->name('book-history');
+
+
+
 

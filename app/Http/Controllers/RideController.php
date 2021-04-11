@@ -15,12 +15,5 @@ class RideController extends Controller
         }
        return view('Driver.request-ride');
     }
-    function book_history(User $user)
-    {
-        if(!$user->is_driver())
-        {
-            return back();
-        }
-       return view('Driver.booking-history');
-    }
+
 }

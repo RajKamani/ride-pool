@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookHistoryController;
 use App\Http\Controllers\RideController;
 use App\Http\Controllers\RouteController;
 use Illuminate\Support\Facades\Auth;
@@ -43,12 +44,16 @@ Route::patch('/update-vehicle/{vehicle}', [App\Http\Controllers\VehicleControlle
 // add route
 Route::middleware('auth')->group(function (){
     Route::get('/add-route/{user}', [RouteController::class,'display_add_form'])->name('add-route-form');
+    Route::post('/add-route/{user}', [RouteController::class,'insertRoute'])->name('add-route'); // Insert route
 });
+
+//Book history
+
+Route::get('/book-history/{user}', [BookHistoryController::class,'book_history'])->name('book-history');
 
 
 //ride request
 Route::get('/ride-req/{user}', [RideController::class,'display_req'])->name('ride-request');
-Route::get('/book-history/{user}', [RideController::class,'book_history'])->name('book-history');
 
 
 

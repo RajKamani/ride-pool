@@ -13,4 +13,10 @@ class Vehicle extends Model
 
         return $this->belongsTo(User::class);
     }
+
+    public function car_route(){
+
+        return $this->belongsToMany(Route::class, 'route_vehicle');
+    }
+
 }

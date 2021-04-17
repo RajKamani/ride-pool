@@ -9,5 +9,6 @@
     "/css/ride-requests.css": "/css/ride-requests.css",
     "/css/manage-vehicles.css": "/css/manage-vehicles.css",
     "/css/driver-dashboard.css": "/css/driver-dashboard.css",
-    "/css/bookings.css": "/css/bookings.css"
+    "/css/bookings.css": "/css/bookings.css",
+    "/css/available-rides.css": "/css/available-rides.css"
 }

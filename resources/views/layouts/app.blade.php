@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="{{ URL::asset('assets/images/logo.ico') }}">
 
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/available-rides.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/forms.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/index.css') }}">
 
@@ -191,8 +192,40 @@
 <main class="centered">
     @yield('content')
 </main>
-
+<footer>
+    <div class="footer-top">
+        <div class="footer-top__section">
+            <h1>Find us at</h1>
+            <ul class="footer-top__social">
+                <li class="footer-top__social-handle"><a href="#"><i class="fa fa-facebook"
+                                                                     aria-hidden="true"></i></a>
+                </li>
+                <li class="footer-top__social-handle"><a href="#"><i class="fa fa-instagram"
+                                                                     aria-hidden="true"></i></a>
+                </li>
+                <li class="footer-top__social-handle"><a href="#"><i class="fa fa-envelope-o"
+                                                                     aria-hidden="true"></i></a></li>
+                <li class="footer-top__social-handle"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-top__section">
+            <ul class="footer-top__navigation">
+                <li class="footer-top__navigation-item"><a href="./book-ride.html"><span>Book Ride</span></a></li>
+                <li class="footer-top__navigation-item"><a href="./user/bookings.html"><span>My Bookings</span></a>
+                </li>
+                <li class="footer-top__navigation-item"><a href="./offer-ride.html"><span>Offer Ride</span></a></li>
+                <li class="footer-top__navigation-item"><a href="./signup.html"><span>Sign Up</span></a></li>
+                <li class="footer-top__navigation-item"><a href="./login.html"><span>Login</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© MyPool 2021</p>
+    </div>
+</footer>
 </body>
 <script src="{{URL::asset('js/navigation.js')}}"></script>
+<script src="https://use.fontawesome.com/9b1d03ddac.js"></script>
 @yield('agreementScript')
 </html>

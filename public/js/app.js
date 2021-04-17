@@ -34495,6 +34495,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/css/available-rides.css":
+/*!*******************************************!*\
+  !*** ./resources/css/available-rides.css ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/bookings.css":
 /*!************************************!*\
   !*** ./resources/css/bookings.css ***!
@@ -49753,6 +49766,7 @@ Vue.compile = compileToFunctions;
 /******/ 			["./resources/css/index.css"],
 /******/ 			["./resources/css/main.css"],
 /******/ 			["./resources/css/forms.css"],
+/******/ 			["./resources/css/available-rides.css"],
 /******/ 			["./resources/css/bookings.css"],
 /******/ 			["./resources/css/driver-dashboard.css"],
 /******/ 			["./resources/css/manage-vehicles.css"],

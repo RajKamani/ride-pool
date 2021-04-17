@@ -3,6 +3,7 @@
 use App\Http\Controllers\BookHistoryController;
 use App\Http\Controllers\RideController;
 use App\Http\Controllers\RouteController;
+use App\Http\Controllers\SearchRideController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -55,6 +56,6 @@ Route::get('/book-history/{user}', [BookHistoryController::class,'book_history']
 //ride request
 Route::get('/ride-req/{user}', [RideController::class,'display_req'])->name('ride-request');
 
-
-
+// Search Ride
+Route::post('/search', [SearchRideController::class,'display'])->name('search_ride');
 

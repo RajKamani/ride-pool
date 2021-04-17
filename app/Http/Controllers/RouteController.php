@@ -25,9 +25,9 @@ class RouteController extends Controller
         "destination" => ['required','max:255'],
         "date" => ['required','date','after:yesterday'],
         "duration" => ['required'],
-        "vehicle" => ['required']
+        "vehicle" => ['required','numeric']
       ]);
-
+      
       $route=Route::create([
           'source' => $request['source'],
           'destination' => $request['destination'],
@@ -36,6 +36,6 @@ class RouteController extends Controller
 
       ]);
       $route=$route->vehicle_r()->attach($request['vehicle']);
-      return back();
+      return redirect(route('book-history',$user));
   }
 }

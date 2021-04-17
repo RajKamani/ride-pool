@@ -66,7 +66,7 @@
             @error('vehicle')
 
             <span style="color: red;">
-                    <strong>{{ $message }}</strong>
+                    <strong>{{ $message == 'The vehicle must be a number.' ? "Please Select Vehicle." : $message }}</strong>
                 </span>
 
             @enderror

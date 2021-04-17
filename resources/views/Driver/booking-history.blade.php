@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="content">
-        @foreach($routes_objs as $routes)  {{--Array of obj--}}
+        @forelse($routes_objs as $routes)  {{--Array of obj--}}
             @forelse($routes as $route) {{--itereating through each route--}}
                 <div class="driver-booking">
                     <div class="driver-booking__detail">
@@ -64,7 +64,9 @@
             @empty
                 <h3>No history yet. <br> Create it first !</h3>
             @endforelse
-        @endforeach
+		@empty
+		<h3>No history yet. <br> Create it first !</h3>
+        @endforelse
 
     </div>
 @endsection

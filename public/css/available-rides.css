@@ -1,0 +1,57 @@
+.content {
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.ride {
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #ccc;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ride__title {
+    font-size: 1.2rem;
+    padding: 8px;
+    background-color: rgb(30, 30, 30);
+    color: white;
+    text-align: center;
+    font-weight: normal;
+}
+
+.ride__detail {
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ride__sub-detail {
+    padding: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ride__sub-detail div {
+    margin: 0 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ride__actions {
+    display: flex;
+    margin-bottom: 16px;
+}

@@ -19,6 +19,7 @@ mix.js('resources/js/app.js', 'public/js')
     .css('resources/css/index.css','public/css')
     .css('resources/css/main.css','public/css')
     .css('resources/css/forms.css','public/css')
+    .css('resources/css/available-rides.css','public/css')
 
     .css('resources/css/bookings.css','public/css')
     .css('resources/css/driver-dashboard.css','public/css')

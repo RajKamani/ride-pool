@@ -19,6 +19,7 @@ class CreateRideReqsTable extends Migration
             $table->foreignId('user_id');
             $table->integer('passenger_id');
             $table->foreignId('vehicle_id');
+            $table->integer('seats');
             $table->boolean('req_status')->default(0);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

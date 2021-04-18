@@ -50,6 +50,7 @@
                         <form action="{{route('req_ride',[$car->driver,$car])}}" method="POST">
                             @csrf
                             <input type="hidden" value="{{auth()->user()->id}}" name="authuser">
+                            <input type="hidden" value="{{$notAvailable['seats']}}" name="seats">
                             <button type="submit" class="flat-button">Request Booking</button>
                         </form>
                     </div>

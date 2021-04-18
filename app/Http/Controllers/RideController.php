@@ -13,7 +13,10 @@ class RideController extends Controller
         {
             return back();
         }
-       return view('Driver.request-ride');
+
+        $reqS= $user->ride_req()->get();
+
+       return view('Driver.request-ride',compact('reqS'));
     }
 
 }

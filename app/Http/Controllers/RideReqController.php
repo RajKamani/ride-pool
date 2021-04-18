@@ -20,6 +20,7 @@ class RideReqController extends Controller
                 'passenger_id' => $request['authuser'],
                 'vehicle_id' => $vehicle->id,
                 'req_status' => 0,
+                'seats' => $request['seats'],
             ]);
         } catch (\Exception $e) {
             $data = 'Request Already Sent.';

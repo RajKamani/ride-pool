@@ -18,5 +18,9 @@ class Vehicle extends Model
 
         return $this->belongsToMany(Route::class, 'route_vehicle');
     }
+    public function ride_req_v(){
+
+        return $this->hasMany(Ride_req::class);
+    }
 
 }

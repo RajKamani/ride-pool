@@ -56,5 +56,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Vehicle::class);
     }
+    public function ride_req()
+    {
+        return $this->hasMany(Ride_req::class);
+    }
 
 }

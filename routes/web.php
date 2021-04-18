@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookHistoryController;
 use App\Http\Controllers\RideController;
+use App\Http\Controllers\RideReqController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\SearchRideController;
 use Illuminate\Support\Facades\Auth;
@@ -59,3 +60,6 @@ Route::get('/ride-req/{user}', [RideController::class,'display_req'])->name('rid
 // Search Ride
 Route::post('/search', [SearchRideController::class,'display'])->name('search_ride');
 
+
+// ride req. from user
+Route::post('/ride-req/{user}/{vehicle}', [RideReqController::class,'send_Req'])->name('req_ride');

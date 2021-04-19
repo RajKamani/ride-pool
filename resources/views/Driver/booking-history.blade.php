@@ -25,7 +25,7 @@
                     @foreach($route->vehicle_r()->get() as $pass_root)
 
                         @forelse($pass_root->ride_req_v as $pass)
-
+                            @if($pass->req_status == 1)
                             <li class="passenger-details__detail">
                                 <div>
                                     <p>Name: {{\App\Models\User::find($pass->passenger_id)->name}}</p>
@@ -34,9 +34,10 @@
                                     <p>Drop:{{$pass->car_vehicle->car_route[0]->destination}}</p>
                                     <p>Seats:{{$pass->seats}}</p>
                                     <p>Kms: 266</p>
-                                    <p>Amount Payable: {{number_format((200*10)/$pass_root->ride_req_v->count())}}/-</p>
+                                    <p>Amount Payable: {{number_format((200*10)/$pass_root->ride_req_v->where('req_status','=',1)->count())}}/-</p>
                                 </div>
                             </li>
+                            @endif
                         @empty
                             <li class="passenger-details__detail">
                                 <div>

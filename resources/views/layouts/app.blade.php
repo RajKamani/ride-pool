@@ -40,7 +40,7 @@
                     <a href="{{route('home')}}"><span>Book Ride</span></a>
                 </li>
                 <li class="main-header__navigation-item">
-                    <a href="./user/bookings.html"><span>My Bookings</span></a>
+                    <a href="{{route('pass-book-history',auth()->user())}}"><span>My Bookings</span></a>
                 </li>
                 <form method="post" action="{{route('offer_ride',auth()->user())}}">
                     @csrf

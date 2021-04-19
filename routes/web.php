@@ -71,3 +71,6 @@ Route::post('accepted/{user:id}',[MailController::class,'sendmail'])->name('acce
 
 //reject mail;
 Route::post('rejected/{user:id}',[MailController::class,'sendmailDecline'])->name('reject_mail');
+
+// passenger Book history
+Route::get('/my-pool/{user}',[BookHistoryController::class,'pass_book_history'])->name('pass-book-history');

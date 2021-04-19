@@ -24,7 +24,7 @@ class MailController extends Controller
 
         Mail::to($user->email)->send(new SendMail($details,false));
 
-        return view('MailSend', compact(['user','rejectedREQ']));
+        return view('MailSend', compact(['user']));
 
     }
     function sendmailDecline(User $user, Request $request)
@@ -42,7 +42,7 @@ class MailController extends Controller
         ];
 
         Mail::to($user->email)->send(new SendMail($details,true));
-        return view('MailSend', compact(['user','rejectedREQ']));
+        return view('MailSend', compact(['user']));
 
     }
 }

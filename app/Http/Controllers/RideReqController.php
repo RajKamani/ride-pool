@@ -11,6 +11,10 @@ use Illuminate\Http\Request;
 
 class RideReqController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     function send_Req(User  $user, Vehicle $vehicle ,Request  $request)
     {
 

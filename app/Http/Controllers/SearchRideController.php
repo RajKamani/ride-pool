@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class SearchRideController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     function display(Request $request)
     {
         $search = $request->validate([

@@ -9,7 +9,10 @@ use Illuminate\Http\Request;
 
 class RouteController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
   function display_add_form(User $user)
   {
       $cars=$user->vehicles()->get();
@@ -27,7 +30,7 @@ class RouteController extends Controller
         "duration" => ['required'],
         "vehicle" => ['required','numeric']
       ]);
-      
+
       $route=Route::create([
           'source' => $request['source'],
           'destination' => $request['destination'],

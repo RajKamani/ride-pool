@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookHistoryController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\RideController;
 use App\Http\Controllers\RideReqController;
 use App\Http\Controllers\RouteController;
@@ -63,3 +64,10 @@ Route::post('/search', [SearchRideController::class,'display'])->name('search_ri
 
 // ride req. from user
 Route::post('/ride-req/{user}/{vehicle}', [RideReqController::class,'send_Req'])->name('req_ride');
+
+
+//Accpet req mail
+Route::post('accepted/{user:id}',[MailController::class,'sendmail'])->name('accept_mail');
+
+//reject mail;
+Route::post('rejected/{user:id}',[MailController::class,'sendmailDecline'])->name('reject_mail');

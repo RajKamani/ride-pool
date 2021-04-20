@@ -40,8 +40,8 @@
                                     <p>Pickup: {{$pass->car_vehicle->car_route[0]->source}}</p>
                                     <p>Drop:{{$pass->car_vehicle->car_route[0]->destination}}</p>
                                     <p>Seats:{{$pass->seats}}</p>
-                                    <p>Kms: 266</p>
-                                    <p>Amount Payable: {{number_format((200*10)/$pass_root->ride_req_v->where('req_status','=',1)->count())}}/-</p>
+                                    <p>Kms: 200</p>
+                                    <p>Amount Payable: {{number_format((200*$pass->car_vehicle->rate_per_km)/$pass_root->ride_req_v->where('req_status','=',1)->count())}}/-</p>
                                 </div>
                             </li>
                             @endif

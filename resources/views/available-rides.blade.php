@@ -28,8 +28,15 @@
 
                             <div>
                                 <p><b>Seats</b></p>
-                                <p>{{$car['model_name']}}</p>
+                                <p>{{$car['no_of_seats']}}</p>
                             </div>
+                        </div>
+                        <div class="ride__sub-detail">
+                            <div>
+                                <p><b>Dept. Time</b></p>
+                                <p>{{$route->time}}</p>
+                            </div>
+
                         </div>
                     </div>
                     <h1 class="ride__title">Driver Information</h1>

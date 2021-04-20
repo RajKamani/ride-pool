@@ -42,6 +42,18 @@
 
 
             <div class="input-container">
+                <label class="form-label" for="from">Dept. Time</label>
+                <input class="form-input" type="time"  name="time"  value=""/>
+            </div>
+            @error('time')
+
+            <span style="color: red;">
+                    <strong>{{ $message }}</strong>
+                </span>
+
+            @enderror
+
+            <div class="input-container">
                 <label class="form-label" for="from">Duration</label>
                 <input class="form-input" type="text" placeholder="Ex. 2 hour" name="duration" id="durations"  value="{{old('duration')}}"/>
             </div>

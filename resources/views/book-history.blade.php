@@ -18,6 +18,12 @@
                         <p>{{$route->car_route[0]->duration}}</p>
                     </div>
                 </div>
+                <div class="driver-booking__journey-details">
+                    <div class="driver-booking__location">
+                        <p><b>Dept. Time</b></p>
+                        <p>{{$route->car_route[0]->time}}</p>
+                    </div>
+                </div>
             </div>
             <div class="driver-booking__detail">
                 <h1 class="driver-booking__title">Passenger Details</h1>

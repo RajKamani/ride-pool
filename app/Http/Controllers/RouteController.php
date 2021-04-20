@@ -13,32 +13,35 @@ class RouteController extends Controller
     {
         $this->middleware('auth');
     }
-  function display_add_form(User $user)
-  {
-      $cars=$user->vehicles()->get();
 
-      return view('Driver.add-route',compact('cars'));
-  }
+    function display_add_form(User $user)
+    {
+        $cars = $user->vehicles()->get();
 
-  function insertRoute(User $user,Request $request)
-  {
+        return view('Driver.add-route', compact('cars'));
+    }
 
-      $routeData = $request->validate([
-        "source" => ['required','max:255'],
-        "destination" => ['required','max:255'],
-        "date" => ['required','date','after:yesterday'],
-        "duration" => ['required'],
-        "vehicle" => ['required','numeric']
-      ]);
+    function insertRoute(User $user, Request $request)
+    {
 
-      $route=Route::create([
-          'source' => $request['source'],
-          'destination' => $request['destination'],
-          'date' => $request['date'],
-          'duration' => $request['duration'],
+        $routeData = $request->validate([
+            "source" => ['required', 'max:255'],
+            "destination" => ['required', 'max:255'],
+            "date" => ['required', 'date', 'after:yesterday'],
+            "duration" => ['required'],
+            "vehicle" => ['required', 'numeric'],
+            "time" => ['required', 'date_format:H:i']
+        ]);
 
-      ]);
-      $route=$route->vehicle_r()->attach($request['vehicle']);
-      return redirect(route('book-history',$user));
-  }
+        $route = Route::create([
+            'source' => $request['source'],
+            'destination' => $request['destination'],
+            'date' => $request['date'],
+            'time' => $request['time'],
+            'duration' => $request['duration'],
+
+        ]);
+        $route = $route->vehicle_r()->attach($request['vehicle']);
+        return redirect(route('book-history', $user));
+    }
 }

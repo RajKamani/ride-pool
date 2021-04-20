@@ -19,6 +19,7 @@ class CreateRoutesTable extends Migration
             $table->string('source');
             $table->string('destination');
             $table->date('date');
+            $table->time('time');
             $table->string('duration');
             $table->timestamps();
            # $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');

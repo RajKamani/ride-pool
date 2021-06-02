@@ -10,15 +10,8 @@
         </div>
         <div class="common-layout__content">
             <h1 class="content-heading">Offer Rides</h1>
-            <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut
-                labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip
-                ex ea commodo consequat.</p>
-            <p class="content-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.</p>
+            <p class="content-text">By using the Site, you represent and warrant that: (1) you have the legal capacity and you agree to comply with these Terms of Use. (2) your use of the Site will not violate any applicable law or regulation.</p>
+            <p class="content-text">If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or terminate your account and refuse any and all current or future use of the Site.</p>
             <input class="form-input" type="text" placeholder="Drivers Licence" name="licence"/>
             @error('licence')
             <span style="color: red;">

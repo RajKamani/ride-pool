@@ -211,12 +211,18 @@
         </div>
         <div class="footer-top__section">
             <ul class="footer-top__navigation">
-                <li class="footer-top__navigation-item"><a href="./book-ride.html"><span>Book Ride</span></a></li>
-                <li class="footer-top__navigation-item"><a href="./user/bookings.html"><span>My Bookings</span></a>
-                </li>
-                <li class="footer-top__navigation-item"><a href="./offer-ride.html"><span>Offer Ride</span></a></li>
-                <li class="footer-top__navigation-item"><a href="./signup.html"><span>Sign Up</span></a></li>
-                <li class="footer-top__navigation-item"><a href="./login.html"><span>Login</span></a></li>
+                @auth
+                    <li class="footer-top__navigation-item"><a href="#"><span>Book Ride</span></a></li>
+                    <li class="footer-top__navigation-item"><a href="#"><span>My Bookings</span></a>
+                    </li>
+                    <li class="footer-top__navigation-item"><a href="#"><span>Offer Ride</span></a></li>
+
+                @endauth
+                @guest
+                    <li class="footer-top__navigation-item"><a href="{{route('register')}}"><span>Sign Up</span></a>
+                    </li>
+                    <li class="footer-top__navigation-item"><a href="{{route('login')}}"><span>Login</span></a></li>
+                @endguest
             </ul>
         </div>
     </div>

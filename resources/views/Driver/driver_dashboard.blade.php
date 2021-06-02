@@ -23,7 +23,7 @@
             <img src="/assets/images/manage-vehicles.png" alt="Manage Vehicles"/>
             <h2>Manage Vehicles</h2>
         </a>
-        <a class="driver-activity" href="payments.html">
+        <a class="driver-activity" href="/">
             <img src="/assets/images/driver-payments.png" alt="Payments"/>
             <h2>Payments</h2>
         </a>
